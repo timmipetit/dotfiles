@@ -40,6 +40,6 @@ ZSH_THEME="clean"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vagrant symfony fabric git-flow-avh heroku)
+plugins=(git vagrant symfony fabric git-flow-avh heroku go)
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
