@@ -1,2 +1,2 @@
 alias reload!='. ~/.zshrc'
-alias ssh-add="ssh-add -t 1d"
+alias ssh-add="ssh-add -t 12h"
