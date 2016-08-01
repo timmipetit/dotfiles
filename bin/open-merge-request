@@ -1,0 +1,13 @@
+#!/bin/sh -eu
+#~/bin/open-merge-request
+
+GITLAB_URL="${GITLAB_URL:-"https://recras.githost.io/recras/recras"}"
+
+branch="${1:-"$(git rev-parse --abbrev-ref HEAD)"}"
+
+base="$(git config --get "gitflow.branch.${branch}.base" || true)"
+if [ -z "$base" ]; then
+	base=dev
+fi
+
+open "${GITLAB_URL}/merge_requests/new?merge_request[source_branch]=${branch}&merge_request[target_branch]=${base}"
