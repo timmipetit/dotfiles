@@ -1,0 +1,23 @@
+#!/bin/zsh
+
+GITLAB_URL="https://recras.githost.io/recras/recras/compare/"
+
+branch=$(git rev-parse --abbrev-ref HEAD)
+if [[ -n "$1" ]]; then
+	branch=$(git rev-parse --abbrev-ref "$1")
+fi
+
+compare=$(git config --get "gitflow.branch.${branch}.base")
+if [[ -z "$compare" ]]; then
+	compare=dev
+fi
+if [[ -n "$2" ]]; then
+	compare="$2"
+fi
+
+head=$(git rev-parse "$branch")
+
+#echo "Guessed branch point between '$branch' and '$compare'"
+#echo "$branch_point"
+
+open "${GITLAB_URL}${compare}...${head}"
