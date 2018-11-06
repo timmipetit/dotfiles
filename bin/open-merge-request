@@ -1,7 +1,7 @@
 #!/bin/sh -eu
 #~/bin/open-merge-request
 
-GITLAB_URL="${GITLAB_URL:-"https://recras.githost.io/recras/recras"}"
+GITLAB_URL="${GITLAB_URL:-"https://gitlab.recras.nl/recras/recras"}"
 
 branch="${1:-"$(git rev-parse --abbrev-ref HEAD)"}"
 

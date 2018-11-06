@@ -1,0 +1,13 @@
+#!/bin/sh
+echo "Running $1 iterations";
+failed=0
+for i in `seq 1 $1`; do
+        echo "Iteration $i";
+        if eval ${*:2}; then
+                echo "Succeeded";
+        else
+                echo "Failed";
+                ((failed++))
+        fi
+done;
+echo "$failed of $1 runs failed";
