@@ -40,6 +40,9 @@ ZSH_THEME="clean"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git vagrant symfony git-flow-avh heroku go)
+plugins=(git vagrant symfony git-flow-avh heroku go kubectl kube-ps1)
 
 source $HOME/.oh-my-zsh/oh-my-zsh.sh
+
+PROMPT='%{$fg[$NCOLOR]%}%B%n%b%{$reset_color%}:%{$fg[blue]%}%B%c/%b%{$reset_color%} $(git_prompt_info)%(!.#.$) '
+RPROMPT='[%*]$(kube_ps1)'
