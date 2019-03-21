@@ -2,6 +2,7 @@
 echo "Running until failure";
 runs=0
 while eval $*; do
+    echo "Iteration $runs done.";
     ((runs++))
 done;
 echo "Failed after $runs runs."
