@@ -5,3 +5,4 @@ then
 	export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
     export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
 fi
+export PATH="$HOME/.composer/vendor/bin/:$PATH"
