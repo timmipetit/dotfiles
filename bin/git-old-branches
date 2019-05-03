@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Git lets you use very readable time formats!
+cutoff_time="3 months ago"
+
+git for-each-ref refs/remotes/origin --format='%(refname)' |
+while read branch; do
+    git reflog expire --expire="$cutoff_time" $branch
+    if [ "$(git reflog show -1 $branch | wc -l)" -eq 0 ]; then
+        echo -e `git show --format="%ar by %an" $branch | head -n 1`\\t$branch
+    fi
+done
